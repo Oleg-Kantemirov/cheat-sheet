@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS selectors and specificity</title>
+        <link href='index.css' rel='stylesheet' type='text/css'>
+    </head>
+            <body>
+                  <header>
+                    <h1>CSS selectors and specificity reference table</h1>
+                  </header>   
+                    <main>
+                        <section>
+                           <h2>Selectors</h2>
+                           <table>
+                             <thead>
+                                <tr>
+                                  <th scope="col">Selector's name</th>
+                                  <th scope="col">Example</th>
+                                  <th scope="col">Description</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr>
+                                  <th class="subsection">Basic</th>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>Universal</th>
+                                  <td>*</td>
+                                  <td>Selects all elements</td>
+                                </tr>
+                                <tr>
+                                   <th>Element</th>
+                                   <td>p</td>
+                                   <td>Selects all &lt;p&gt; elements </td>
+                                </tr>
+                                <tr>
+                                   <th>Attribute</th>
+                                   <td>[title]</td>
+                                   <td>Selects all elements with attribute [title]</td>
+                                </tr>
+                                <tr>
+                                  <th>Class</th>
+                                  <td>.MyClass</td>
+                                  <td>Selects all element with class .MyClass</td>
+                                </tr>
+                                <tr>
+                                  <th>Pseudo class</th>
+                                  <td>:My.PseudoClass</td>
+                                  <td>Selects all element with pseudo-class :My.PseudoClass</td>
+                                </tr>
+                                <tr>
+                                  <th>Pseudo element</th>
+                                  <td>::My.PseudoElement</td>
+                                  <td>Selects all ::My.PseudoElement pseudo-elements</td>
+                                </tr>
+                                <tr>
+                                  <th class="subsection">Compound or complex selectors</th>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                                <tr>
+                                  <th>Chaining combinator</th>
+                                  <td>h3.section-heading</td>
+                                  <td>Selects CSS selectors can be chained so that rule sets apply only to elements that match all criteria.
+                                      </td>
+                                </tr> 
+                                <tr>
+                                  <th>Descendant combinator</th>
+                                  <td>.box p</td>
+                                  <td>Matching only the &lt;p&gt; element which is inside an element with a class of .box.</td>
+                                </tr>
+                                <tr>
+                                  <th>Listing combinator</th>
+                                  <td>div, p</td>
+                                  <td>	Selects all &lt;div&gt; elements and all &lt;p&gt; elements</td>
+                                </tr>
+                                <tr>
+                                  <th>Child combinator</th>
+                                  <td>div  p</td>
+                                  <td>Selects all &lt;p&gt; elements where the parent is a &lt;div&gt; element</td>
+                                </tr>
+                                <tr>
+                                  <th>Adjacent sibling combinator</th>
+                                  <td> h2 + p </td>
+                                  <td>Selects only the single &lt;p&gt; element that immediately follows an &lt;h2&gt; element.</td>
+                                </tr>
+                                <tr>
+                                  <th>General sibling combinator</th>
+                                  <td>h2 ~ p</td>
+                                  <td> Selects all &lt;p&gt; elements that follow an &lt;h2&gt;, immediately or not.</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </section>
+                        <section>
+                            <h2 class="specificity">Specificity</h2>
+                            <div>
+                                <h3>CSS selector has its place in the specificity hierarchy.</h3>                              </h3> 
+
+                                <p>There are four categories which define the specificity level of a selector:</p>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Selector's Name</th>
+                                      <th scope="col">Example</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th>Inline style</th>
+                                      <td>h1 &lt;style="color: pink;"&gt;</td>
+                                    </tr>
+                                    <tr>
+                                      <th>IDs</th>
+                                      <td>#navbar</td>
+                                    </tr>
+                                    <tr>
+                                      <th>Classes, pseudo-classes, attribute selectors </th>
+                                      <td>.test, :hover, [href]</td>
+                                    </tr>
+                                    <tr>
+                                      <th>Elements and pseudo-elements </th>
+                                      <td>h1, ::before</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <h3>How to calculate specificity!</h3>
+
+                                <p>Start at 0, add 100 for each ID value, add 10 for each class value (or pseudo-class 
+                                  or attribute selector), add 1 for each element selector or pseudo-element.
+                                </p>
+
+                                <h4>Note: Inline style gets a specificity value of 1000, and is always given the highest 
+                                  priority!</h4>
+
+                                <h4>Note 2: There is one exception to this rule: if you use the !important rule, it will 
+                                  even override inline styles!</h4>
+                            </div>
+  
+                        </section>
+                    </main>
+            </body>
+</html>
+
+  
